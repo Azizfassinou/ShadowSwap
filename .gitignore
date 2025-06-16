@@ -1,0 +1,41 @@
+# Unity - .gitignore recommandé
+
+# Répertoires générés automatiquement par Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+Assets/AssetStoreTools*
+
+# Fichiers de solution générés par Unity
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Fichiers liés à VS Code / Rider
+.vscode/
+.idea/
+*.code-workspace
+
+# Fichiers macOS
+.DS_Store
+
+# Fichiers système
+Thumbs.db
+Desktop.ini
+
+# Exclure les fichiers LFS trop lourds (ex: DLL Unity Burst)
+*.dll
+*.so
+*.dylib
