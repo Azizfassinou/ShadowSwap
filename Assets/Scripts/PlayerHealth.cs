@@ -1,19 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class EnemyPatrol : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    public Transform pointA;
-    public Transform pointB;
-    public float speed = 2f;
-
-    private Transform target;
-
-    private void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Enemy"))
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Game Over !");
-        // Désactive le joueur, recharge la scène, etc.
+        Debug.Log("Trigger ENTERED with: " + other.name);
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("💀 Player touched enemy! Game Over.");
+            Die();
+        }
     }
-}
+
+    void Die()
+    {
+        // Recharge la scène actuelle
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
